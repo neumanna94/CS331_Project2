@@ -1,8 +1,8 @@
 /*
 Project Task 2: Milestone 1(Analysis and Design phase) 
-Alexander Neumann
-Thu Htoo San (Wayne)
-Mac DeCourcy
+Date: 11/12/2020
+Authors: Alexander Neumann, Thu Htoo San (Wayne), Mac DeCourcy
+Description: Build file for EER Diagram
 */
 CREATE SCHEMA IF NOT EXISTS `CleanAndGo`;
 USE `CleanAndGo` ;
