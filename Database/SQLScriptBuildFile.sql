@@ -32,7 +32,6 @@ CREATE TABLE IF NOT EXISTS `Customer` (
   `Email` VARCHAR(45) NOT NULL,
   `PhoneNumber` INT NOT NULL,
   `Balance` INT NOT NULL,
-  `Customercol` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`CustomerID`))
 ;
 
@@ -147,7 +146,6 @@ CREATE TABLE IF NOT EXISTS `User` (
   `Username` VARCHAR(45) UNIQUE NOT NULL,
   `Password` VARCHAR(45) NOT NULL,
   `Salt` VARCHAR(45) NOT NULL,
-  `User` VARCHAR(45) NULL,
   PRIMARY KEY (`UserID`));
 
 CREATE TABLE IF NOT EXISTS `Account` (
