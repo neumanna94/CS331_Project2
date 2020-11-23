@@ -1,0 +1,8 @@
+PositionID,Name,Description,HourlyPayRate
+1,Manager,"Facilitate washer/dryer maintenance.",17.00
+2,Janitor,"Clean entire store.",13.65
+3,Sales,"Help find new markets.",50.00
+4,Owner,Owner,0.01
+5,Co-owner,Co-owner,0.01
+6,"Front desk","Greet guests and help customers.",12.00
+7,Investor,Investor.,0.01

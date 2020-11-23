@@ -1,0 +1,8 @@
+SupplierID,Name,Address,Phone,Balance
+1,Costco,"4401 4th Ave S, Seattle, WA 98134","(206) 622-3136",0.00
+2,Amazon,Online,Online,0.00
+3,Webrestrauntstore.com,Online,Online,0.00
+4,"Juan Felipe","2414 1st Ave Apt 303 Seattle, WA 98121","(959) 531-2195",0.00
+5,"The Home Depot","6810 S 180th St Tukwila, WA 98188",(206)575-9200,0.00
+6,Lowes,"24050 Pacific Highway South Kent, WA","(206) 651-9036",0.00
+7,"Ace Hardware","14100 SE Petrovitsky Rd Renton, WA 98058-8932","(425) 793-0123",0.00

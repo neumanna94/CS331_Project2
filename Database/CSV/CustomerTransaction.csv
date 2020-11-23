@@ -1,0 +1,8 @@
+CustomerTransactionID,CustomerID,ServiceID,Date,AmountCharge,Description,Satisfaction
+1,1,1,2020-11-22,10,"Used Dryer.",5
+2,1,2,2020-11-22,10,"Used Cleaner",5
+3,2,1,2020-11-22,20,"Used Dryer",4
+4,3,2,2020-11-22,20,"Used Washer. Had problem.",0
+5,4,2,2020-11-22,30,"Used Washer",5
+6,5,3,2020-11-22,30,"Used dry cleaning services.",10
+7,6,3,2020-11-22,30,"Used dry cleaning services",10

@@ -1,0 +1,4 @@
+ServiceID,ServiceName,Description,RateCharge,Duration
+1,Laundry,"Use our wonderful laundry machines.",1.00,00:30:00
+2,Dryer,"Use our wonderful dryer machines.",1.00,00:30:00
+3,"Dry Cleaning","We will clean your clothes.",10.00,02:00:00

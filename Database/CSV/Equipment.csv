@@ -1,0 +1,8 @@
+EquipmentID,InventoryID,BrandName,Description,PurchaseDate,PurchasePrice,Type,HoursUsed,EquipmentMaintenanceScheduleID
+1,8,"LG Signature","Top-Load Electric Dryer Machine",2020-11-22,509.78,Dryer,10.0,2
+2,9,Samsung,"7.4 cu. ft. White Gas Dryer with Sensor Dry",2020-11-22,411.98,"Gas Dryer",10.0,2
+3,10,Amana,"3.5 cu. ft. White Top Load Washing Machine",2020-11-22,904.89,Washer,10.0,1
+4,11,Samsung,"5.0 cu. ft. Hi-Efficiency White Top Load Washing Machine with Active Water Jet.",2020-11-22,467.73,Washer,10.0,1
+5,12,GE,"4.2 cu. ft. White Top Load Washing Machine with Stainless Steel Basket.",2020-11-22,389.31,Washer,10.0,1
+6,13,Electrolux,"4.4 cu. ft. Front Load Washer with SmartBoost Technology Steam in Titanium",2020-11-22,725.34,Washer,10.0,1
+7,14,Whirlpool,"4.3 cu. ft. High-Efficiency White Top Load Washing Machine with Quick Wash.",2020-11-22,421.46,Washer,10.0,1
