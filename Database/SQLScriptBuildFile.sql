@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS `Inventory` (
 
 CREATE TABLE IF NOT EXISTS `CleaningSupply` (
   `InventoryID` INT NOT NULL,
-  `Name` VARCHAR(45) NOT NULL,
+  `Name` VARCHAR(1000) NOT NULL,
   `Description` TEXT NOT NULL,
   `CurrentInventory` INT NOT NULL,
   `SafetyStockLevel` INT NOT NULL,
@@ -82,15 +82,16 @@ CREATE TABLE IF NOT EXISTS `EquipmentMaintenanceSchedule` (
 ;
 
 CREATE TABLE IF NOT EXISTS `Equipment` (
+  `EquipmentID` INT NOT NULL,
   `InventoryID` INT NOT NULL,
   `BrandName` VARCHAR(45) NOT NULL,
-  `Description` VARCHAR(45) NOT NULL,
+  `Description` VARCHAR(200) NOT NULL,
   `PurchaseDate` DATE NOT NULL,
   `PurchasePrice` DECIMAL(10,2) NOT NULL,
   `Type` VARCHAR(45) NOT NULL,
   `HoursUsed` DECIMAL(10,1) NOT NULL,
   `EquipmentMaintenanceScheduleID` INT NOT NULL,
-  PRIMARY KEY (`InventoryID`),
+  PRIMARY KEY (`EquipmentID`),
   FOREIGN KEY (`InventoryID`) REFERENCES `Inventory`(`InventoryID`) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (`EquipmentMaintenanceScheduleID`) REFERENCES `EquipmentMaintenanceSchedule`(`EquipmentMaintenanceScheduleID`) ON DELETE CASCADE ON UPDATE CASCADE);
   
@@ -104,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `EmployeeShift` (
 CREATE TABLE IF NOT EXISTS `Supplier` (
   `SupplierID` INT NOT NULL,
   `Name` VARCHAR(45) NOT NULL,
-  `AddressID` INT NOT NULL,
+  `Address` VARCHAR(45) NOT NULL,
   `Phone` VARCHAR(45) NOT NULL,
   `Balance` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`SupplierID`))
@@ -167,13 +168,12 @@ CREATE TABLE IF NOT EXISTS `CustomerUseInventory` (
 
 CREATE TABLE IF NOT EXISTS `SupplierProduct` (
   `SupplierProductID` INT NOT NULL,
-  `Name` VARCHAR(45) NOT NULL,
-  `Description` VARCHAR(45) NOT NULL,
+  `Name` VARCHAR(200) NOT NULL,
+  `Description` VARCHAR(1000) NOT NULL,
   `Price` DECIMAL(10,2) NOT NULL,
   `SupplierID` INT NOT NULL,
   PRIMARY KEY (`SupplierProductID`),
-  FOREIGN KEY (`SupplierProductID`) REFERENCES `Supplier`(`SupplierID`) ON DELETE CASCADE ON UPDATE CASCADE);
-
+  FOREIGN KEY (`SupplierID`) REFERENCES `Supplier`(`SupplierID`) ON DELETE CASCADE ON UPDATE CASCADE);
 CREATE TABLE IF NOT EXISTS `ExpenseType` (
   `ExpenseTypeID` INT NOT NULL,
   `Name` VARCHAR(45) NOT NULL,
@@ -186,4 +186,4 @@ CREATE TABLE IF NOT EXISTS `Expense` (
   `Amount` DECIMAL(10,2) NOT NULL,
   `Date` DATE NOT NULL,
   PRIMARY KEY (`ExpenseID`),
-  FOREIGN KEY (`ExpenseID`) REFERENCES `ExpenseType`(`ExpenseTypeID`) ON DELETE CASCADE ON UPDATE CASCADE);
+  FOREIGN KEY (`ExpenseType`) REFERENCES `ExpenseType`(`ExpenseTypeID`) ON DELETE CASCADE ON UPDATE CASCADE);
