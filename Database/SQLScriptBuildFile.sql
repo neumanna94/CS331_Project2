@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `Employee` (
   `FirstName` VARCHAR(45) NOT NULL,
   `LastName` VARCHAR(45) NOT NULL,
   `AddressID` INT NOT NULL,
-  `Gender` TINYINT NULL,
+  `Gender` CHAR NULL,
   `DateHired` DATE NOT NULL,
   `PositionID` INT NOT NULL,
   PRIMARY KEY (`EmployeeID`),
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `Service` (
   `ServiceID` INT NOT NULL,
   `ServiceName` VARCHAR(45) NOT NULL,
   `Description` TEXT NOT NULL,
-  `RateCharge` FLOAT NOT NULL,
+  `RateCharge` DECIMAL(10,2) NOT NULL,
   `Duration` TIME NOT NULL,
   PRIMARY KEY (`ServiceID`))
 ;
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `EquipmentMaintenanceSchedule` (
   `EquipmentMaintenanceScheduleID` INT NOT NULL,
   `Name` VARCHAR(45) NOT NULL,
   `NextMaintenanceDate` DATE NOT NULL,
-  `MaintenancePeriod` DATE NOT NULL,
+  `MaintenancePeriod` INT NOT NULL,
   `LastMaintenance` DATE NOT NULL,
   `Cost` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`EquipmentMaintenanceScheduleID`))
