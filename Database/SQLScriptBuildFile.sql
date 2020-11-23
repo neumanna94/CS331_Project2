@@ -30,8 +30,8 @@ CREATE TABLE IF NOT EXISTS `Customer` (
   `LastName` VARCHAR(45) NOT NULL,
   `Address` VARCHAR(45) NOT NULL,
   `Email` VARCHAR(45) NOT NULL,
-  `PhoneNumber` INT NOT NULL,
-  `Balance` INT NOT NULL,
+  `PhoneNumber` VARCHAR(45) NOT NULL,
+  `Balance` DOUBLE(10,2) NOT NULL,
   PRIMARY KEY (`CustomerID`))
 ;
 
