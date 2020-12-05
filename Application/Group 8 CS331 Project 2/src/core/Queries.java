@@ -1,6 +1,7 @@
 package core;
 
 public enum Queries {
+
     SELECT_ALL_FROM_ALL("SELECT * From *"),
     EXAMPLE_QUERY("aaa");
 

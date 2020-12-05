@@ -1,4 +1,4 @@
-package Menu;
+package menu;
 
 public abstract class MenuOption {
 
@@ -20,5 +20,6 @@ public abstract class MenuOption {
     }
 
     public abstract void doAction();
+
 
 }

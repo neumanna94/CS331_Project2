@@ -1,7 +1,10 @@
 package core;
 
-import Menu.Menu;
-import Menu.*;
+import menu.*;
+import utils.*;
+import data.User;
+
+import java.sql.*;
 
 public class Main {
 
@@ -10,6 +13,34 @@ public class Main {
     public static void main(String[] args){
         populateMenu();
         menu.menuLoop();
+    }
+
+    private User extractUserFromResultSet(ResultSet rs) throws SQLException {
+        User user = new User();
+
+        user.setId( rs.getInt("id") );
+        user.setName( rs.getString("name") );
+        user.setPass( rs.getString("pass") );
+        return user;
+    }
+
+    public User getUserByUserNameAndPassword(String user, String pass) throws SQLException {
+        ConnectionManager connector = new ConnectionManager();
+        Connection connection = connector.createConnection();
+    try{
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM user WHERE Username = ? AND Password = ?");
+            ps.setString(1, user);
+            ps.setString(2, pass);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next())
+            {
+                return extractUserFromResultSet(rs);
+            }
+        } catch (SQLException ex) {
+
+            ex.printStackTrace();
+        }
+        return null;
     }
 
     public static void populateMenu(){

@@ -1,4 +1,4 @@
-package Menu;
+package menu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Menu {
 
-    private static final String EXIT_TERM = "0";
+    private static final String EXIT_TERM = "4";
     private static final String INDENTATION = "    ";
     private List<MenuOption> menuOptions = new ArrayList<>();
     private int level = 0;
