@@ -57,19 +57,27 @@ public class Main {
 
         equipAndSupplies.add(new MenuOption("1", "Add new equipment") {
             @Override
-            public void doAction() {}
+            public void doAction() {
+
+            }
         });
         equipAndSupplies.add(new MenuOption("2", "Add new supply") {
             @Override
-            public void doAction() {}
+            public void doAction() {
+
+            }
         });
         equipAndSupplies.add(new MenuOption("3", "View Inventory") {
             @Override
-            public void doAction() {}
+            public void doAction() {
+
+            }
         });
         equipAndSupplies.add(new MenuOption("0", "Quit") {
             @Override
-            public void doAction() { }
+            public void doAction() {
+
+            }
         });
         custAndServices.add(new MenuOption("1", "Analyze the progress of the business") {
             @Override
