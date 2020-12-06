@@ -1,3 +1,6 @@
+/*@Author Mac DeCourcy
+ *@queries Alex Neumann
+ */
 package core;
 
 public enum Queries {
