@@ -1,5 +1,7 @@
 package data;
-
+/*
+ *@author Mac DeCourcy
+ */
 public class User {
 
     private Integer id;

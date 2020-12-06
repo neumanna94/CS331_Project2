@@ -1,3 +1,6 @@
+/*
+ *@author Mac DeCourcy
+ */
 package utils;
 
 import java.sql.Connection;
@@ -6,17 +9,12 @@ import java.sql.SQLException;
 
 public class ConnectionManager {
 
-    private final String driverName = "com.mysql.jdbc.Driver";
-    private final String connectionUrl = "jdbc:mysql://localhost:3306/student";
-    private final String userName = "Mac";
-    private final String userPass = "Daddy";
+    private final String driverName = "com.mysql.cj.jdbc.Driver";
+    private final String connectionUrl = "jdbc:mysql://localhost:3306/CleanAndGo";
+    private final String userName = "student";
+    private final String userPass = "password";
 
     private Connection con = null;
-
-//    public ConnectionManager(String u, String p){
-//        this.userName = u;
-//        this.userPass = p;
-//    }
 
     public ConnectionManager() {
         try {

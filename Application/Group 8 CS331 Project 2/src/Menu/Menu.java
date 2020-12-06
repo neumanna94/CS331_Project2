@@ -1,5 +1,10 @@
+/*
+ *@author Mac DeCourcy
+ */
 package menu;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,7 +32,6 @@ public class Menu {
         String input;
         try(Scanner sc=new Scanner(System.in)) {
             while (true) {
-
                 System.out.println(this);
                 input = sc.nextLine();
                 if (input.equals(EXIT_TERM)) {
@@ -37,7 +41,11 @@ public class Menu {
                 String finalInput = input;
                 menuOptions.forEach(m -> {
                     if(m.matchesInput(finalInput)) {
-                        m.doAction();
+                        try {
+                            m.doAction();
+                        } catch (SQLException | IOException throwables) {
+                            throwables.printStackTrace();
+                        }
                         optionFound.set(true);
                     }
                 });

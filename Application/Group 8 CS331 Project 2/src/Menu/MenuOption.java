@@ -1,4 +1,10 @@
+/*
+ *@author Mac DeCourcy
+ */
 package menu;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 public abstract class MenuOption {
 
@@ -19,7 +25,7 @@ public abstract class MenuOption {
         return this.option + ". - " + this.menuDescriptor;
     }
 
-    public abstract void doAction();
+    public abstract void doAction() throws SQLException, IOException;
 
 
 }
