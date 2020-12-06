@@ -2,14 +2,14 @@
 --
 -- Inserting data into table Customer
 --
-INSERT INTO Customer(CustomerID, FirstName, LastName, Address, Email, PhoneNumber, Balance) VALUES
-(1, 'Norris', 'Mclaurin', '3170 Chapel Hill Ave', 'NorrisCalderon@example.com', 42532146754, 0),
-(2, 'Lanny', 'Kirk', '28 W Sharp Hill Parkway', 'TaggartY@example.com', 4253242526, 0),
-(3, 'Darron', 'Pepper', '3853 W Monument Ln', 'JoeannPHuang@example.com', 4257654321, 0),
-(4, 'Adan', 'Mclean', '1514 Rose Hill Drive', 'Ada_Anglin6@nowhere.com', 4251234567, 0),
-(5, 'Trish', 'Mcclelland', '2270 NW Mountain Circle', 'LoydBranham258@example.com', 42575454344, 0),
-(6, 'Reyna', 'Perales', '32 Church Parkway', 'oytxgpgm.ebekzhq@example.com', 4253213567, 0),
-(7, 'Lorene', 'Mclemore', '3097 N Fox Hill Lane', 'SamuelGunn@example.com', 4256431234, 0);
+INSERT INTO Customer(CustomerID, FirstName, LastName, Address, Email, PhoneNumber, Balance, CreationDate) VALUES
+(1, 'Norris', 'Mclaurin', '3170 Chapel Hill Ave', 'NorrisCalderon@example.com', 42532146754,0,'2020-5-12'),
+(2, 'Lanny', 'Kirk', '28 W Sharp Hill Parkway', 'TaggartY@example.com', 4253242526,0,'2020-5-12'),
+(3, 'Darron', 'Pepper', '3853 W Monument Ln', 'JoeannPHuang@example.com', 4257654321,0,'2020-5-12'),
+(4, 'Adan', 'Mclean', '1514 Rose Hill Drive', 'Ada_Anglin6@nowhere.com', 4251234567,0,'2020-5-12'),
+(5, 'Trish', 'Mcclelland', '2270 NW Mountain Circle', 'LoydBranham258@example.com',42575454344,0,'2020-5-12'),
+(6, 'Reyna', 'Perales', '32 Church Parkway', 'oytxgpgm.ebekzhq@example.com', 4253213567,0,'2020-5-12'),
+(7, 'Lorene', 'Mclemore', '3097 N Fox Hill Lane', 'SamuelGunn@example.com', 4256431234,0,'2020-5-12');
 
 --
 -- Inserting data into table EquipmentMaintenanceSchedule
@@ -118,14 +118,14 @@ INSERT INTO CustomerTransaction(CustomerTransactionID, CustomerID, ServiceID, `D
 --
 -- Inserting data into table Employee
 --
-INSERT INTO Employee(EmployeeID, FirstName, LastName, AddressID, Gender, DateHired, PositionID) VALUES
-(1, 'Tran', 'Harmon', 1, 'F', '2019-10-10', 1),
-(2, 'Abel', 'Pereira', 2, 'F', '2018-12-30', 2),
-(3, 'Elbert', 'Talbot', 3, 'M', '2017-04-12', 3),
-(4, 'Hubert', 'Dougherty', 4, 'F', '2011-05-27', 4),
-(5, 'Aldo', 'Zamora', 5, 'F', '2020-05-22', 5),
-(6, 'Yoshiko', 'Knowles', 6, 'M', '2010-01-03', 6),
-(7, 'Agripina', 'Collins', 7, 'F', '2012-11-16', 7);
+INSERT INTO Employee(EmployeeID, FirstName, LastName, Address, Gender, DateHired, PositionID) VALUES
+(1, 'Tran', 'Harmon', "3000 Landerholm Cir SE, Bellevue, WA 98007-6406, United States", 'F', '2019-10-10', 1),
+(2, 'Abel', 'Pereira', "3000 Landerholm Cir SE, Bellevue, WA 98007-6406, United States", 'F', '2018-12-30', 2),
+(3, 'Elbert', 'Talbot', "3000 Landerholm Cir SE, Bellevue, WA 98007-6406, United States", 'M', '2017-04-12', 3),
+(4, 'Hubert', 'Dougherty', "3000 Landerholm Cir SE, Bellevue, WA 98007-6406, United States", 'F', '2011-05-27', 4),
+(5, 'Aldo', 'Zamora', "3000 Landerholm Cir SE, Bellevue, WA 98007-6406, United States", 'M','2020-05-22', 5),
+(6, 'Yoshiko', 'Knowles', "3000 Landerholm Cir SE, Bellevue, WA 98007-6406, United States",'M', '2010-01-03', 6),
+(7, 'Agripina', 'Collins', "3000 Landerholm Cir SE, Bellevue, WA 98007-6406, United States", 'F', '2012-11-16', 7);
 
 --
 -- Inserting data into table Account
@@ -164,7 +164,7 @@ INSERT INTO CustomerUseInventory(CustomerTransactionID, InventoryID) VALUES
 (4, 4),
 (5, 5),
 (6, 4),
-(7, 5);
+(7,10);
 
 --
 -- Inserting data into table EmployeeShift

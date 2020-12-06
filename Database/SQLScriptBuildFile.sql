@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS `Customer` (
   `Email` VARCHAR(45) NOT NULL,
   `PhoneNumber` VARCHAR(45) NOT NULL,
   `Balance` DOUBLE(10,2) NOT NULL,
+  `CreationDate` DATE NOT NULL,
   PRIMARY KEY (`CustomerID`))
 ;
 
@@ -47,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `Employee` (
   `EmployeeID` INT NOT NULL AUTO_INCREMENT,
   `FirstName` VARCHAR(45) NOT NULL,
   `LastName` VARCHAR(45) NOT NULL,
-  `AddressID` INT NOT NULL,
+  `Address` VARCHAR(180) NOT NULL,
   `Gender` CHAR NULL,
   `DateHired` DATE NOT NULL,
   `PositionID` INT NOT NULL,
