@@ -3,6 +3,8 @@
  */
 package menu;
 
+import core.Main;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,16 +29,16 @@ public class Menu {
         this.menuOptions.add(m);
     }
 
-    public void menuLoop(){
+    public int menuLoop(){
 
         String input;
-        try(Scanner sc=new Scanner(System.in)) {
             while (true) {
+                Scanner sc = new Scanner(System.in);
                 System.out.println(this);
+                System.out.println();
                 input = sc.next();
-                System.out.println(input);
                 if (input.equals(EXIT_TERM)) {
-                    return;
+                    return 0;
                 }
                 AtomicBoolean optionFound = new AtomicBoolean(false);
                 String finalInput = input;
@@ -55,7 +57,7 @@ public class Menu {
                     System.out.println("Option is not recognized.");
                 }
             }
-        }
+
     }
 
     @Override

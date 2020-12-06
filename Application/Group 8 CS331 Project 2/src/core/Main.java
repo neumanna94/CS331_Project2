@@ -15,11 +15,12 @@ import java.sql.*;
 
 public class Main {
 
-    static Menu menu = new Menu();
+    public static Menu menu = new Menu(0);
 
     public static void main(String[] args){
         populateMenu();
         menu.menuLoop();
+        System.exit(0);
     }
 
     private static User extractUserFromResultSet(ResultSet rs) throws SQLException {
@@ -113,7 +114,7 @@ public class Main {
         });
         equipAndSupplies.add(new MenuOption("0", "Quit") {
             @Override
-            public void doAction() {}
+            public void doAction() { }
         });
         custAndServices.add(new MenuOption("1", "Analyze the progress of the business") {
             @Override
@@ -148,34 +149,41 @@ public class Main {
                 System.out.println("Exiting...");
             }
         });
+
         employees.add(new MenuOption("1", "Display Schedules"){
             @Override
             public void doAction(){};
         });
+
         employees.add(new MenuOption("0", "Quit"){
             @Override
             public void doAction(){};
         });
+
         updates.add(new MenuOption("1", "Delete Equipment")
         {
             @Override
             public void doAction(){};
         });
+
         updates.add(new MenuOption("2", "Delete Service")
         {
             @Override
             public void doAction(){};
         });
+
         updates.add(new MenuOption("3", "Delete Customer")
         {
             @Override
             public void doAction(){};
         });
+
         updates.add(new MenuOption("4", "Delete Employee")
         {
             @Override
             public void doAction(){};
         });
+
         updates.add(new MenuOption("0", "Quit")
         {
             @Override
@@ -193,7 +201,7 @@ public class Main {
             public void doAction() throws SQLException, IOException {
                 User x = getUserPass();
                 User user = getUserByUserNameAndPassword(x.getName(), x.getPass());
-                if(debug == null)
+                if(user == null)
                     System.out.println("user pass incorrect try again");
                 else
                     System.out.println("Great success");
