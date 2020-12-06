@@ -27,7 +27,7 @@ public class LoginManager {
 
     }
 
-    private static User getUserPass() throws IOException {
+    public static User getUserPass() throws IOException {
         User user = new User();
         BufferedReader reader =
                 new BufferedReader(new InputStreamReader(System.in));

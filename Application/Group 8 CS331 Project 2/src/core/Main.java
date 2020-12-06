@@ -191,7 +191,8 @@ public class Main {
                 LoginManager loginManager = new LoginManager();
                 User x = loginManager.getUserPass();
                 User user = loginManager.getUserByUserNameAndPassword(x.getName(), x.getPass());
-                if(user == null)
+
+              if(user == null)
                     System.out.println("user pass incorrect try again");
                 else
                     System.out.println("Great success");
