@@ -24,7 +24,6 @@ public class Main {
     }
 
 
-
     public ResultSet queryToResultSet(Queries query) throws SQLException {
         ConnectionManager connector = new ConnectionManager();
         Connection connection = connector.createConnection();
@@ -44,39 +43,6 @@ public class Main {
         }
         connection.close();
         return rset;
-    }
-
-    public static void printResultSet(ResultSet rset, int numColums) throws SQLException {
-        switch(numColums){
-            case 1: printOneColumn(rset);
-                break;
-            case 2: printTwoColumn(rset);
-                break;
-            case 3: printThreeColumn(rset);
-                break;
-            default:
-                break;
-        }
-    }
-
-    public static void printOneColumn(ResultSet rset) throws SQLException {
-        for (int i = 0; i < 5 && rset.next(); i++)
-            System.out.print(rset.getString(1));
-    }
-
-    public static void printTwoColumn(ResultSet rset) throws SQLException {
-        for (int i = 0; i < 5 && rset.next(); i++) {
-            System.out.print(rset.getString(1) + " ");
-            System.out.print(rset.getString(2));
-        }
-    }
-
-    public static void printThreeColumn(ResultSet rset) throws SQLException {
-        for (int i = 0; i < 5 && rset.next(); i++) {
-            System.out.print(rset.getString(1) + " ");
-            System.out.print(rset.getString(2) + " " );
-            System.out.print(rset.getString(3));
-        }
     }
 
     public static void populateMenu(){
@@ -182,6 +148,16 @@ public class Main {
         debug.add(new MenuOption("1", "Test conn") {
             @Override
             public void doAction() throws SQLException {
+            ConnectionManager connetion = new ConnectionManager();
+            connetion.createConnection();
+
+            try {
+                Statement stmt =
+            }catch(SQLException e){
+                e.printStackTrace();
+            }
+
+
             }
         });
 
@@ -190,6 +166,7 @@ public class Main {
             public void doAction() throws SQLException, IOException {
                 LoginManager loginManager = new LoginManager();
                 User x = loginManager.getUserPass();
+
                 User user = loginManager.getUserByUserNameAndPassword(x.getName(), x.getPass());
 
               if(user == null)

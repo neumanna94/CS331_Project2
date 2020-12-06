@@ -3,9 +3,9 @@
  */
 package utils;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import core.Queries;
+
+import java.sql.*;
 
 public class ConnectionManager {
 
@@ -40,4 +40,5 @@ public class ConnectionManager {
             e.printStackTrace();
         }
     }
+
 }
