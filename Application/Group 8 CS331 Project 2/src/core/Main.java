@@ -23,51 +23,7 @@ public class Main {
         System.exit(0);
     }
 
-    private static User extractUserFromResultSet(ResultSet rs) throws SQLException {
-        User user = new User();
-        try {
-            user.setId(rs.getInt("userID"));
-            user.setName(rs.getString("Username"));
-            user.setPass(rs.getString("Password"));
-        }catch (SQLException ex){
-            System.out.println("User or pass incorrect");
-            ex.printStackTrace();
-            return null;
-        }
-        return user;
 
-    }
-
-    private static User getUserPass() throws IOException {
-        User user = new User();
-        BufferedReader reader =
-                new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Username: \n");
-        user.setName( reader.readLine());
-        System.out.println("Password: \n");
-        user.setPass(reader.readLine());
-
-        return user;
-    }
-
-    public static User getUserByUserNameAndPassword(String user, String pass) throws SQLException {
-        ConnectionManager connector = new ConnectionManager();
-        Connection connection = connector.createConnection();
-    try{
-            PreparedStatement ps = connection.prepareStatement(Queries.USER_PASS.getString());
-            ps.setString(1, user);
-            ps.setString(2, pass);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next())
-            {
-                return extractUserFromResultSet(rs);
-            }
-        } catch (SQLException ex) {
-
-            ex.printStackTrace();
-        }
-        return null;
-    }
 
     public ResultSet queryToResultSet(Queries query) throws SQLException {
         ConnectionManager connector = new ConnectionManager();
@@ -88,6 +44,39 @@ public class Main {
         }
         connection.close();
         return rset;
+    }
+
+    public static void printResultSet(ResultSet rset, int numColums) throws SQLException {
+        switch(numColums){
+            case 1: printOneColumn(rset);
+                break;
+            case 2: printTwoColumn(rset);
+                break;
+            case 3: printThreeColumn(rset);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public static void printOneColumn(ResultSet rset) throws SQLException {
+        for (int i = 0; i < 5 && rset.next(); i++)
+            System.out.print(rset.getString(1));
+    }
+
+    public static void printTwoColumn(ResultSet rset) throws SQLException {
+        for (int i = 0; i < 5 && rset.next(); i++) {
+            System.out.print(rset.getString(1) + " ");
+            System.out.print(rset.getString(2));
+        }
+    }
+
+    public static void printThreeColumn(ResultSet rset) throws SQLException {
+        for (int i = 0; i < 5 && rset.next(); i++) {
+            System.out.print(rset.getString(1) + " ");
+            System.out.print(rset.getString(2) + " " );
+            System.out.print(rset.getString(3));
+        }
     }
 
     public static void populateMenu(){
@@ -199,8 +188,9 @@ public class Main {
         debug.add(new MenuOption("2", "Test login") {
             @Override
             public void doAction() throws SQLException, IOException {
-                User x = getUserPass();
-                User user = getUserByUserNameAndPassword(x.getName(), x.getPass());
+                LoginManager loginManager = new LoginManager();
+                User x = loginManager.getUserPass();
+                User user = loginManager.getUserByUserNameAndPassword(x.getName(), x.getPass());
                 if(user == null)
                     System.out.println("user pass incorrect try again");
                 else
