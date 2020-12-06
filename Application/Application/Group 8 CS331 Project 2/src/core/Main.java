@@ -99,7 +99,12 @@ public class Main {
         Menu employees = new Menu(1);
         Menu updates = new Menu(1);
         Menu debug = new Menu(1);
-
+        Menu cust_analyze = new Menu(2);
+        Menu cust_services = new Menu(2);
+        Menu cust_cust = new Menu(2);
+        Menu updates_insert = new Menu(2);
+        Menu updates_delete = new Menu(2);
+        Menu updates_update = new Menu(2);
         equipAndSupplies.add(new MenuOption("1", "Add new equipment") {
             @Override
             public void doAction() {}
@@ -118,29 +123,51 @@ public class Main {
         });
         custAndServices.add(new MenuOption("1", "Analyze the progress of the business") {
             @Override
-            public void doAction() {
-                System.out.println("I'm in cust and services option 1");
-            }
+            public void doAction() {cust_analyze.menuLoop();}
         });
-        custAndServices.add(new MenuOption("1", "Analyze the progress of the business") {
+        cust_analyze.add(new MenuOption("1", "Total number of new customers")
+        {
             @Override
-            public void doAction() {
-                System.out.println("I'm in cust and services option 1");
-            }
+            public void doAction(){};
         });
-
+        cust_analyze.add(new MenuOption("2", "Total number of service transactions")
+        {
+            @Override
+            public void doAction(){};
+        });
         custAndServices.add(new MenuOption("2", "Services") {
             @Override
-            public void doAction() {
-                System.out.println("I'm in cust and services option 2");
-            }
+            public void doAction() {cust_services.menuLoop();}
         });
-
+        cust_services.add(new MenuOption("1", "Requested Services")
+        {
+            @Override
+            public void doAction(){};
+        });
+        cust_services.add(new MenuOption("2", "Service Transactions")
+        {
+            @Override
+            public void doAction(){};
+        });
+        cust_services.add(new MenuOption("3", "Annual revenues from services")
+        {
+            @Override
+            public void doAction(){};
+        });
         custAndServices.add(new MenuOption("3", "Customers") {
             @Override
-            public void doAction() {
-                System.out.println("I'm in cust and services option 3");
-            }
+            public void doAction() {cust_cust.menuLoop();}
+        });
+
+        cust_cust.add(new MenuOption("1", "Customer list for a service")
+        {
+            @Override
+            public void doAction(){};
+        });
+        cust_cust.add(new MenuOption("2", "Customer number")
+        {
+            @Override
+            public void doAction(){};
         });
 
         custAndServices.add(new MenuOption("0", "Quit") {
@@ -149,41 +176,90 @@ public class Main {
                 System.out.println("Exiting...");
             }
         });
-
+        //Display Schedules calls code to display schedule based on employeeID input.
         employees.add(new MenuOption("1", "Display Schedules"){
             @Override
             public void doAction(){};
         });
-
+        //Quit employee menu.
         employees.add(new MenuOption("0", "Quit"){
             @Override
             public void doAction(){};
         });
-
-        updates.add(new MenuOption("1", "Delete Equipment")
+        //Calls the delete equipment menu
+        updates.add(new MenuOption("1", "Insert new information")
+        {
+            @Override
+            public void doAction(){updates_insert.menuLoop();};
+        });
+        updates_insert.add(new MenuOption("1","Add a new equipment")
         {
             @Override
             public void doAction(){};
         });
-
-        updates.add(new MenuOption("2", "Delete Service")
+        updates_insert.add(new MenuOption("2","Add a new service")
         {
             @Override
             public void doAction(){};
         });
-
-        updates.add(new MenuOption("3", "Delete Customer")
+        updates_insert.add(new MenuOption("3","Add new customer information")
         {
             @Override
             public void doAction(){};
         });
-
-        updates.add(new MenuOption("4", "Delete Employee")
+        updates_insert.add(new MenuOption("4","Add new employee information")
         {
             @Override
             public void doAction(){};
         });
-
+        //Calls the delete information menu
+        updates.add(new MenuOption("2", "Delete information")
+        {
+            @Override
+            public void doAction(){updates_delete.menuLoop();};
+        });
+        updates_delete.add(new MenuOption("1", "Delete specific equipment"){
+           @Override
+           public void doAction(){};
+        });
+        updates_delete.add(new MenuOption("2", "Delete specific service"){
+            @Override
+            public void doAction(){};
+        });
+        updates_delete.add(new MenuOption("3", "Delete specific customer information"){
+            @Override
+            public void doAction(){};
+        });
+        updates_delete.add(new MenuOption("3", "Delete specific employee information"){
+            @Override
+            public void doAction(){};
+        });
+        updates_update.add(new MenuOption("1", "Update specific equipment")
+        {
+            @Override
+            public void doAction(){};
+        });
+        updates_update.add(new MenuOption("2", "Update specific service")
+        {
+            @Override
+            public void doAction(){};
+        });
+        updates_update.add(new MenuOption("3", "Update specific customer information")
+        {
+            @Override
+            public void doAction(){};
+        });
+        updates_update.add(new MenuOption("4", "Update specific employee information")
+        {
+            @Override
+            public void doAction(){};
+        });
+        //Calls the add information menu
+        updates.add(new MenuOption("3", "Update current information")
+        {
+            @Override
+            public void doAction(){updates_update.menuLoop();};
+        });
         updates.add(new MenuOption("0", "Quit")
         {
             @Override
@@ -217,7 +293,7 @@ public class Main {
             }
         });
 
-        menu.add(new MenuOption("2","Customers & Services") {
+        menu.add(new MenuOption("2","Customer & Services") {
             @Override
             public void doAction() {
                 System.out.println("Customers & Services");
