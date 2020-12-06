@@ -95,8 +95,32 @@ public class Main {
 
         Menu equipAndSupplies = new Menu(1);
         Menu custAndServices = new Menu(1);
+        Menu employees = new Menu(1);
+        Menu updates = new Menu(1);
         Menu debug = new Menu(1);
 
+        equipAndSupplies.add(new MenuOption("1", "Add new equipment") {
+            @Override
+            public void doAction() {}
+        });
+        equipAndSupplies.add(new MenuOption("2", "Add new supply") {
+            @Override
+            public void doAction() {}
+        });
+        equipAndSupplies.add(new MenuOption("3", "View Inventory") {
+            @Override
+            public void doAction() {}
+        });
+        equipAndSupplies.add(new MenuOption("0", "Quit") {
+            @Override
+            public void doAction() {}
+        });
+        custAndServices.add(new MenuOption("1", "Analyze the progress of the business") {
+            @Override
+            public void doAction() {
+                System.out.println("I'm in cust and services option 1");
+            }
+        });
         custAndServices.add(new MenuOption("1", "Analyze the progress of the business") {
             @Override
             public void doAction() {
@@ -118,18 +142,44 @@ public class Main {
             }
         });
 
-        custAndServices.add(new MenuOption("4", "Exit") {
+        custAndServices.add(new MenuOption("0", "Quit") {
             @Override
             public void doAction() {
                 System.out.println("Exiting...");
             }
         });
-
-        menu.add(new MenuOption("5", "debug") {
+        employees.add(new MenuOption("1", "Display Schedules"){
             @Override
-            public void doAction() {
-                debug.menuLoop();
-            }
+            public void doAction(){};
+        });
+        employees.add(new MenuOption("0", "Quit"){
+            @Override
+            public void doAction(){};
+        });
+        updates.add(new MenuOption("1", "Delete Equipment")
+        {
+            @Override
+            public void doAction(){};
+        });
+        updates.add(new MenuOption("2", "Delete Service")
+        {
+            @Override
+            public void doAction(){};
+        });
+        updates.add(new MenuOption("3", "Delete Customer")
+        {
+            @Override
+            public void doAction(){};
+        });
+        updates.add(new MenuOption("4", "Delete Employee")
+        {
+            @Override
+            public void doAction(){};
+        });
+        updates.add(new MenuOption("0", "Quit")
+        {
+            @Override
+            public void doAction(){};
         });
 
         debug.add(new MenuOption("1", "Test conn") {
@@ -164,6 +214,26 @@ public class Main {
             public void doAction() {
                 System.out.println("Customers & Services");
                 custAndServices.menuLoop();
+            }
+        });
+        menu.add(new MenuOption("3","Employees") {
+            @Override
+            public void doAction() {
+                System.out.println("Employees");
+                employees.menuLoop();
+            }
+        });
+        menu.add(new MenuOption("4","Updates") {
+            @Override
+            public void doAction() {
+                System.out.println("Updates");
+                updates.menuLoop();
+            }
+        });
+        menu.add(new MenuOption("5", "debug") {
+            @Override
+            public void doAction() {
+                debug.menuLoop();
             }
         });
 

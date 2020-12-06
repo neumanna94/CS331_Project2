@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Menu {
 
-    private static final String EXIT_TERM = "4";
+    private static final String EXIT_TERM = "0";
     private static final String INDENTATION = "    ";
     private List<MenuOption> menuOptions = new ArrayList<>();
     private int level = 0;
@@ -33,7 +33,8 @@ public class Menu {
         try(Scanner sc=new Scanner(System.in)) {
             while (true) {
                 System.out.println(this);
-                input = sc.nextLine();
+                input = sc.next();
+                System.out.println(input);
                 if (input.equals(EXIT_TERM)) {
                     return;
                 }
